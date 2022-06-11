@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { ComoFuncionaComponent } from './como-funciona/como-funciona.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    AcercaDeComponent
+    AcercaDeComponent,
+    ComoFuncionaComponent
 
 
   ],
