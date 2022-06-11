@@ -1,24 +1,4 @@
-<div [id]="idContainer" class="main-container"> <!--parametriza el [id] desde app.components.ts -->
-  <div class="with-external-footer">
-    <div class="search-container">
-      <div class="search-background-filter">
-
-        <app-subheader></app-subheader> <!--Llama al componente del header-->
-
-        <app-search></app-search>
-      </div>
-    </div>
-
-    <app-footer> </app-footer>  <!--Llama al componente del footer-->
-    <router-outlet></router-outlet> <!-- LLAMA AL COMPONENTE QUE ESTA SIEDO LLAMADO POR LA RUTA-->
-
-<!--BUSCAR: servicios para comunicar dos o mas componentes-->
-  </div>
-</div>
-
-<app-header></app-header>
-
-<!--<div id="header">
+<div id="header">
   <div id="header-shadow">
      <div id="header-container">
         <div id="header-content">
@@ -55,14 +35,4 @@
         </a>
      </div>
   </div>
-</div> -->
-<div id="error-bar" class="hidden">
-  <div id="error-bar-spacer">
-    <div id="error-bar-content">
-      <img src="assets/images/icon-cancelar-blanco.svg" class="hide-error-bar">
-      Ha ocurrido un error inesperado. Verifique que su conexión a internet esté funcionando y vuelva a intentar.
-    </div>
-  </div>
 </div>
-<div class="pika-single is-hidden is-bound" style="position: static; left: auto; top: auto;"></div>
-<div class="pika-single is-hidden is-bound" style="position: static; left: auto; top: auto;"></div>

@@ -1,0 +1,72 @@
+<div  *ngIf="estaVisible" class="search-content">  <!-- a-ngif permite llamar a la variable booleana, es un if-->
+  <div class="search-title">
+     Registro Único de Audiencias<br>de Gestión de Intereses
+  </div>
+  <div class="search-form">
+     <div class="search-input">
+        <input type="text" id="search-text" placeholder="Buscar por funcionarios, dependencias, participantes de audiencias" value="">
+        <a href="busqueda.html"><button class="green" id="submit-search">BUSCAR</button></a>
+     </div>
+     <div class="advance-search-container">
+        <input type="checkbox" id="show-advance-search">
+        <label class="show-advance-search-label" for="show-advance-search">
+        <img src="assets/images/icon-marcador-derecha-blanco.svg" class="advance-search-icon">
+        Personalizá tu búsqueda
+        </label>
+        <div class="advance-search">
+           <div class="search-option">
+              <div class="search-description">
+                 Rango de fechas
+              </div>
+              <input type="text" id="date-from" placeholder="Desde" class="date-input">
+              <input type="text" id="date-to" placeholder="Hasta" class="date-input">
+           </div>
+           <div class="search-option">
+              <div class="search-description">
+                 Buscar solo por:
+              </div>
+              <div class="table">
+                 <div class="table-row">
+                    <div class="table-cell">
+                       <input type="checkbox" id="search-person">
+                       <label for="search-person">
+                       <img src="assets/images/icon-check-blanco.svg" class="checked">
+                       <img src="assets/images/icon-check-no-blanco.svg" class="not-checked">
+                       Personas físicas
+                       </label>
+                    </div>
+                    <div class="table-cell">
+                       <input type="checkbox" id="search-dependencies">
+                       <label for="search-dependencies">
+                       <img src="assets/images/icon-check-blanco.svg" class="checked">
+                       <img src="assets/images/icon-check-no-blanco.svg" class="not-checked">
+                       Dependencias del Poder Ejecutivo Nacional
+                       </label>
+                    </div>
+                 </div>
+                 <div class="table-row">
+                    <div class="table-cell">
+                       <input type="checkbox" id="search-representation">
+                       <label for="search-representation">
+                       <img src="assets/images/icon-check-blanco.svg" class="checked">
+                       <img src="assets/images/icon-check-no-blanco.svg" class="not-checked">
+                       Entidades públicas/privadas
+                       </label>
+                    </div>
+                    <div class="table-cell">
+                       <input type="checkbox" id="search-summary">
+                       <label for="search-summary">
+                       <img src="assets/images/icon-check-blanco.svg" class="checked">
+                       <img src="assets/images/icon-check-no-blanco.svg" class="not-checked">
+                       Motivo o síntesis de la audiencia
+                       </label>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="total-count">
+     </div>
+  </div>
+</div>
