@@ -13,7 +13,7 @@ export class ListadoComponent implements OnInit {
 busqueda: string;
 
   constructor(
-    private VisibilidadBarraBusquedaService: VisibilidadSearchService,
+    private visibilidadBarraBusquedaService: VisibilidadSearchService,
     private mainIdService: MainIdService,
     private resultadosService: ResultadosService,
     private horarioService: HorarioService,
@@ -24,7 +24,7 @@ busqueda: string;
   }
 
   ngOnInit(): void {
-    this.VisibilidadBarraBusquedaService.hacerVisibleBarraDeBusqueda();
+    this.visibilidadBarraBusquedaService.hacerVisibleBarraDeBusqueda();
     this.mainIdService.setearSearcherId();
    // this.ruta.snapshot.queryParamMap.get('busqueda'); ALTERNATIVA
     this.busqueda = this.ruta.snapshot.queryParams != null ? this.ruta.snapshot.queryParams['busqueda'] : "" ;
@@ -40,13 +40,14 @@ busqueda: string;
 
   private mostrarCantResultados(){
     this.horarioService.horaActual().subscribe((hora: any) => {
-
+ // Me suscribo para poder hacer la request
     this.resultadosService.notificarCambioDeResultado(
       {totales:155,
       sistemaActual:155,
       sistemaAnterior:0,
       busqueda:this.busqueda,
-      horario: ""});
+      horario: hora // Le envia el parametro hora al que se suscribio
+    });
 
 
     });

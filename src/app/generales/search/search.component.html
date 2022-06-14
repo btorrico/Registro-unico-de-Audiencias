@@ -70,10 +70,10 @@
            </div>
         </div>
      </div>
-     <div *ngif="resultado != null" class ="total-count"> <!--Solo se muestra ese pesazo si el resultado es distinto de nulo, si no no se muestra-->
+     <div *ngIf ="resultado != null" class ="total-count"> <!--Solo se muestra ese pesazo si el resultado es distinto de nulo, si no no se muestra-->
       Se encontraron {{resultado?.totales}} resultados <!--Le pasa la cantidad de resultados por el service-->
       para "{{resultado?.busqueda}}" ({{resultado?.horario.datetime | date :'shortTime'}}) <!--Copia lo que se va poniendo en la barra de busqueda-->
-     <!--({{resultado?.horario.datetime}}) muestra la hora pedida a la api-->
+     <!--({{resultado?.horario.datetime}}) muestra la hora pedida a la api, datetime es el nombre del atributo que tiene en la api-->
       <div class="results-tabs">
          <a href="https://audiencias.mininterior.gob.ar/buscar?pen=30">
             <div class="result-tab selected">Sistema actual ({{resultado?.sistemaActual}})</div>

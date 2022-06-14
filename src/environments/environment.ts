@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  apiHorarioURL: 'http://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires' // se pasa la api
-
+  apiHorarioURL: 'http://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires'
+  // se pasa la url de la api
+ //tambien agregamos la url al archivo environment.prod.ts
+ //En ambos archivos tienen que existir los mismos parametros
 };
 
 //Archivo de configuracion!!

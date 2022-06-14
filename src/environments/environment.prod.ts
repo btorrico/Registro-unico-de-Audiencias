@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiHorarioURL: 'http://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires'
 };

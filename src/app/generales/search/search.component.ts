@@ -33,12 +33,12 @@ export class SearchComponent implements OnInit {
     // Todas las inicializaciones mas complejas o importantes se hacen en ESTE METODO
 
     this.visibilidadService.cambioDeVisibilidad.subscribe((estaVisible:boolean) =>
-     {this.estaVisible= estaVisible;}); // Esta clase se suscribe a las notificaciones del EvenEmitter
+     { console.log("papas");
+      this.estaVisible= estaVisible;}); // Esta clase se suscribe a las notificaciones del EvenEmitter
     //cada vez que se cambie el estado de estaVisible me avisa
 
-    this.resultadosService.cambioDeResultado.subscribe((nuevoResultado: Resultado) => {
-      this.resultado = nuevoResultado;
-    });
+    this.resultadosService.cambioDeResultado.subscribe((nuevoResultado: Resultado) =>
+     {this.resultado = nuevoResultado;});
 
   }
 

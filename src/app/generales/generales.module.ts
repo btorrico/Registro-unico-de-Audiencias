@@ -22,7 +22,7 @@ import{HttpClientModule} from '@angular/common/http'; //Se importa en todos los 
     CommonModule,
     RouterModule, // se agrega para que funciones el routerLink
     FormsModule,
-    HttpClientModule
+    HttpClientModule // Se agrega para poder consumir la Api
 
   ],
   exports: [
