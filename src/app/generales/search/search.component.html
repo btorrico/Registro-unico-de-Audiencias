@@ -4,9 +4,13 @@
   </div>
   <div class="search-form">
      <div class="search-input">
-        <input type="text" id="search-text" placeholder="Buscar por funcionarios, dependencias, participantes de audiencias" value="">
-        <a href="busqueda.html"><button class="green" id="submit-search">BUSCAR</button></a>
-     </div>
+        <input type="text" id="search-text" placeholder="Buscar por funcionarios, dependencias, participantes de audiencias" [(ngModel)]="busqueda" [ngModelOptions]="{standalone: true}"> <!--Doble bindeo para hacer la busqueda-->
+        <!-- Bindeo de  datos a traves de lectura: [ngModelOptions] hace referencia a un atributo de la clase pero solo lo lee-->
+        <!--{standalone: true} quiere decir que ese input esta suelto, no pertenece a ningun formulario-->
+        <!--Si no tenemos un formulario tenemos que indicarle a Angular que dicho componenente esta suelto-->
+        <a (click)="buscar()"><button class="green" id="submit-search">BUSCAR</button></a>
+     <!--Click es un evento que ocurre en el DOM, y cada vez que se hace click en el boton buscar  Angular se encarga de llamar al metodo buscar-->
+      </div>
      <div class="advance-search-container">
         <input type="checkbox" id="show-advance-search">
         <label class="show-advance-search-label" for="show-advance-search">
@@ -66,7 +70,19 @@
            </div>
         </div>
      </div>
-     <div class="total-count">
+     <div *ngif="resultado != null" class ="total-count"> <!--Solo se muestra ese pesazo si el resultado es distinto de nulo, si no no se muestra-->
+      Se encontraron {{resultado?.totales}} resultados <!--Le pasa la cantidad de resultados por el service-->
+      para "{{resultado?.busqueda}}" ({{resultado?.horario.datetime | date :'shortTime'}}) <!--Copia lo que se va poniendo en la barra de busqueda-->
+     <!--({{resultado?.horario.datetime}}) muestra la hora pedida a la api-->
+      <div class="results-tabs">
+         <a href="https://audiencias.mininterior.gob.ar/buscar?pen=30">
+            <div class="result-tab selected">Sistema actual ({{resultado?.sistemaActual}})</div>
+         </a>
+         <a href="https://audiencias.mininterior.gob.ar/buscar?pen=30&amp;historico=si">
+            <div class="result-tab ">Sistema anterior ({{resultado?.sistemaAnterior}})</div>
+         </a>
+      </div>
+   </div>
      </div>
   </div>
-</div>
+

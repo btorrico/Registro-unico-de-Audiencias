@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiHorarioURL: 'http://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires' // se pasa la api
+
 };
+
+//Archivo de configuracion!!
 
 /*
  * For easier debugging in development mode, you can import the following file
