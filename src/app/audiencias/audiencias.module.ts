@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { AudienciasRoutingModule } from './audiencias-routing.module';
 import { ListadoComponent } from './listado/listado.component';
+import { AudienciaComponent } from './audiencia/audiencia.component';
 
 
 @NgModule({
   declarations: [
 
-    ListadoComponent
+    ListadoComponent,
+     AudienciaComponent
   ],
   imports: [
     CommonModule,
